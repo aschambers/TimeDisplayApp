@@ -5,61 +5,30 @@
 		body {
 			text-align:center;
 		}
-		.red {
-			background-color:red;
-			border:1px solid black;
-			width:100px;
-			padding:50px;
-			margin-bottom:5px;
+		.first {
+			border:3px solid black;
+			padding:5px;
+			width:200px;
 		}
-		.green {
-			background-color:green;
-			border:1px solid black;
-			width:100px;
-			padding:50px;
-			margin-bottom:5px;
-		}
-		.playagain {
-			margin-top:10px;
+		.second {
+			border:3px solid black;
+			padding:5px;
+			width:250px;
+			padding-right:50px;
+			padding-left:50px;
 		}
 	</style>
 </head>
 <body>
 
-	<div id='container'>
-		<!-- client side version of echo -->
-		<!-- <?= $this->session->userdata['number']; ?> -->
-		<h1>Welcome to the Game</h1>
-		<p>I am thinking of a number between 1 and 100</p>
-		<p>Take a guess</p>
 <center>
-<?php 
-		if($this->session->flashdata('result'))
-		{
-?>
-			<p class='red'><?= $this->session->flashdata('result'); ?></p>
-<?php
-		}
-		if($this->session->flashdata('correct'))
-		{
-?>
-			<div class='green'>
-				<p><?= $this->session->flashdata('correct'); ?> was the number!</p>
-				<form class="playagain" action='reset' method='post'>
-					<input type='submit' value='Play Again?'>
-				</form>
-			</div>
-<?php
-		}
-?>
+	<div id='container'>
+		<h4 class='first'>The current time and date:</h4>
+		<h1 class='second'>
+			<!-- php echo the date from controller  -->
+			<span><?= $date ?></span>
+		</h1>
 </center>
-		<!-- action = check is the route name in our routes.php file  -->
-		<form action='check' method='post'>
-			<input type='text' name='guess' />
-			<input type='submit' value='Submit' />
-		</form>
-	</div>
-
 </body>
 </html>
 
