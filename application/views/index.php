@@ -10,15 +10,17 @@
 			border:1px solid black;
 			width:100px;
 			padding:50px;
+			margin-bottom:5px;
 		}
 		.green {
 			background-color:green;
 			border:1px solid black;
 			width:100px;
 			padding:50px;
+			margin-bottom:5px;
 		}
 		.playagain {
-			margin-top:5px;
+			margin-top:10px;
 		}
 	</style>
 </head>
@@ -41,7 +43,8 @@
 		if($this->session->flashdata('correct'))
 		{
 ?>
-			<div class='green'><?= $this->session->flashdata('correct'); ?>
+			<div class='green'>
+				<p><?= $this->session->flashdata('correct'); ?> was the number!</p>
 				<form class="playagain" action='reset' method='post'>
 					<input type='submit' value='Play Again?'>
 				</form>

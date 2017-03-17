@@ -22,19 +22,19 @@ class Main extends CI_Controller {
 		// if guess is too low
 		if($this->input->post('guess') < $this->session->userdata['number'])
 		{
-			$this->session->set_flashdata('result', 'Too Low');
+			$this->session->set_flashdata('result', 'Too Low!');
 		}
 
 		// if guess is too high
 		if($this->input->post('guess') > $this->session->userdata['number'])
 		{
-			$this->session->set_flashdata('result', 'Too High');
+			$this->session->set_flashdata('result', 'Too High!');
 		}
 
 		// if guess is correct
 		if($this->input->post('guess') == $this->session->userdata['number'])
 		{
-			$this->session->set_flashdata('correct', 'You got it!');
+			$this->session->set_flashdata('correct', $this->session->userdata['number']);
 		}
 		redirect('/');
 	}
